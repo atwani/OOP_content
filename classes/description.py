@@ -171,7 +171,8 @@ class Description(ABC):
 
         if USE_GEMINI:
             import google.generativeai as genai
-            converted_msgs = convert_messages_format(self.messages)
+            #converted_msgs = convert_messages_format(self.messages)
+            converted_msgs = self.messages
 
             genai.configure(api_key=GEMINI_API_KEY)
             model = genai.GenerativeModel(
